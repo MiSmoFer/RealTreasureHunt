@@ -7,5 +7,11 @@
     <string name="make_game">Napravi novu igru</string>
     <string name="play_game">Igraj igru</string>
     <string name="share_game">Podijeli igru</string>
+    <string name="add_checkpoint">Dodaj čekpojnt</string>
+    <string name="save_game">Spremi igru</string>
+    <string name="instructions">Upute</string>
+    <string name="chooseScanPhoto">Odaberite sliku</string>
+    <string name="inputCode">Upišite kod</string>
+    <string name="saveCheckpoint">Spremi čekpojnt</string>
 
 </resources>

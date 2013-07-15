@@ -7,5 +7,15 @@
     <string name="make_game">Make new game</string>
     <string name="play_game">Play game</string>
     <string name="share_game">Share game</string>
+    <string name="title_activity_make_game">MakeGameActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="add_checkpoint">Add checkpoint</string>
+    <string name="save_game">Save game</string>
+    <string name="title_activity_check_point">CheckPointActivity</string>
+    <string name="instructions">Instructions</string>
+    <string name="saveCheckpoint">Save checkpoint</string>
+    <string name="chooseScanPhoto">Choose scan photo</string>
+    <string name="inputCode">Input code</string>
 
 </resources>

@@ -1,14 +1,16 @@
 package hr.game.realtreasurehunt;
 
 import hr.game.realtreasurehunt.util.SystemUiHider;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -45,6 +47,11 @@ public class MainActivity extends Activity {
 	 */
 	private SystemUiHider mSystemUiHider;
 
+	// ============================== custom variables =========================
+	
+	Button btnMakeNewGame;
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,7 +60,29 @@ public class MainActivity extends Activity {
 
 		final View controlsView = findViewById(R.id.fullscreen_content_controls);
 		final View contentView = findViewById(R.id.fullscreen_content);
+		
+		// ============== interface definiton ===============================
+		
+		btnMakeNewGame = (Button) findViewById(R.id.btnAddCheckpoint);
+		
+		
+		
+		// ========== button onClick events ==========================================
+		
+		btnMakeNewGame.setOnClickListener(new OnClickListener () {
 
+			@Override
+			public void onClick(View v) {
+				
+				// goto activity MakeGameActivity
+				Intent makeGame = new Intent(MainActivity.this, MakeGameActivity.class);
+				startActivity(makeGame);
+				
+			}
+			
+		});
+		
+		// =============   fullscreen interface - by default, do not touch ============
 		// Set up an instance of SystemUiHider to control the system UI for
 		// this activity.
 		mSystemUiHider = SystemUiHider.getInstance(this, contentView,
