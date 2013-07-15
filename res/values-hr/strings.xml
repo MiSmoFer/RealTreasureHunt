@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Real Treasure Hunt</string>
+    <string name="dummy_button">Dummy</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="make_game">Napravi novu igru</string>
+    <string name="play_game">Igraj igru</string>
+    <string name="share_game">Podijeli igru</string>
+
+</resources>
