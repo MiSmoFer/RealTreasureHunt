@@ -2,14 +2,16 @@ package hr.game.realtreasurehunt;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 
@@ -19,6 +21,8 @@ public class CheckPointActivity extends Activity {
 	Button btnChooseScanPhoto;
 	Button btnInputCode;
 	EditText txtInstructions;
+	
+	String checkpointCode;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +47,43 @@ public class CheckPointActivity extends Activity {
 			public void onClick(View v) {
 				Intent resultData = new Intent();
 				resultData.putExtra("instructions", txtInstructions.toString());
+				resultData.putExtra("checkpointCode", checkpointCode);
 				//TODO: putExtra GPS coordinates
 				setResult(Activity.RESULT_OK, resultData);
 				finish();
+			}
+			
+		});
+		
+		btnInputCode.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				
+				// ======= popup for code input =======================
+				
+				AlertDialog.Builder alert = new AlertDialog.Builder(CheckPointActivity.this);
+				
+				Resources res = getResources();
+				String inputCode = res.getString(R.string.inputCode);
+				
+				alert.setTitle(inputCode);
+				
+				final EditText input = new EditText(CheckPointActivity.this);
+				alert.setView(input);
+				input.setHint("ex. CharlieBrown");
+				alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						
+						checkpointCode = input.getText().toString();
+						
+					}
+				});
+				alert.setCancelable(true);
+				
+				alert.show();
+				
 			}
 			
 		});

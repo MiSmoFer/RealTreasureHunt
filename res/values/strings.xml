@@ -17,5 +17,6 @@
     <string name="saveCheckpoint">Save checkpoint</string>
     <string name="chooseScanPhoto">Choose scan photo</string>
     <string name="inputCode">Input code</string>
+    <string name="title_activity_play_game">PlayGameActivity</string>
 
 </resources>

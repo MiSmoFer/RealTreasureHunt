@@ -58,13 +58,16 @@ public class MakeGameActivity extends Activity {
 	}
 	
 	
+	// ======== on return from CheckPointActivity, returns checkpoint info =============
 	protected void onActivityResult(int requestCode, int resultCode,
 	          Intent data) {
 	      if (requestCode == checkpointNumber) {
 	          if (resultCode == RESULT_OK) {
 	        	  //TODO: ucitati vracene vrijednosti iz CheckPointActivityja - upute i GPS koordinate
 	            String instructions = data.getStringExtra("instructions"); 
-	            Checkpoint cPoint = new Checkpoint(instructions, "");
+	            String checkpointCode = data.getStringExtra("checkpointCode");
+	            
+	            Checkpoint cPoint = new Checkpoint(instructions, "", checkpointCode);
 	            checkpointArray.add(cPoint);
 	            checkpointAdapter.notifyDataSetChanged();
 	          }

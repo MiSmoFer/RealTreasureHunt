@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 	// ============================== custom variables =========================
 	
 	Button btnMakeNewGame;
-
+	Button btnPlayGame;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +63,8 @@ public class MainActivity extends Activity {
 		
 		// ============== interface definiton ===============================
 		
-		btnMakeNewGame = (Button) findViewById(R.id.btnAddCheckpoint);
-		
+		btnMakeNewGame = (Button) findViewById(R.id.btnMakeNewGame);
+		btnPlayGame = (Button) findViewById(R.id.btnPlayGame);
 		
 		
 		// ========== button onClick events ==========================================
@@ -78,6 +78,17 @@ public class MainActivity extends Activity {
 				Intent makeGame = new Intent(MainActivity.this, MakeGameActivity.class);
 				startActivity(makeGame);
 				
+			}
+			
+		});
+		
+		btnPlayGame.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// goto activity PlayGameActivity
+				Intent playGame = new Intent(MainActivity.this, PlayGameActivity.class);
+				startActivity(playGame);
 			}
 			
 		});

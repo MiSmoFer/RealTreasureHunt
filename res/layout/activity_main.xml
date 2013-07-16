@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content" >
 
                     <Button
-                        android:id="@+id/btnAddCheckpoint"
+                        android:id="@+id/btnMakeNewGame"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/make_game" />
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content" >
 
                     <Button
-                        android:id="@+id/btnSaveGame"
+                        android:id="@+id/btnPlayGame"
                         android:text="@string/play_game" />
                 </TableRow>
 
