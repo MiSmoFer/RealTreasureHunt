@@ -24,6 +24,7 @@ public class CheckPointActivity extends Activity {
 	
 	String checkpointCode;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,10 +46,28 @@ public class CheckPointActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				
+				double latitude = 0;
+				double longitude = 0;
+				
+				GPSTracker gps = new GPSTracker(CheckPointActivity.this);
+				if (gps.canGetLocation())
+				{
+					latitude = gps.getLatitude();
+					longitude = gps.getLongitude();
+				}
+				else
+				{
+					gps.showSettingsAlert();
+				}
+				
+				// ========= return checkpoint data to MakeGameActivity
 				Intent resultData = new Intent();
 				resultData.putExtra("instructions", txtInstructions.toString());
 				resultData.putExtra("checkpointCode", checkpointCode);
-				//TODO: putExtra GPS coordinates
+				resultData.putExtra("latitude",  latitude);
+				resultData.putExtra("longitude",  longitude);
+				
 				setResult(Activity.RESULT_OK, resultData);
 				finish();
 			}

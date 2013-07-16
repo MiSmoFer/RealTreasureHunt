@@ -66,8 +66,10 @@ public class MakeGameActivity extends Activity {
 	        	  //TODO: ucitati vracene vrijednosti iz CheckPointActivityja - upute i GPS koordinate
 	            String instructions = data.getStringExtra("instructions"); 
 	            String checkpointCode = data.getStringExtra("checkpointCode");
+	            double gpsLatitude = data.getDoubleExtra("latitude", 45.86);
+	            double gpsLongitude = data.getDoubleExtra("longitude",  15.993);
 	            
-	            Checkpoint cPoint = new Checkpoint(instructions, "", checkpointCode);
+	            Checkpoint cPoint = new Checkpoint(instructions, checkpointCode, gpsLatitude, gpsLongitude);
 	            checkpointArray.add(cPoint);
 	            checkpointAdapter.notifyDataSetChanged();
 	          }
