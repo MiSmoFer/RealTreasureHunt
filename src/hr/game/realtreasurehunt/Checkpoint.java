@@ -8,7 +8,7 @@ public class Checkpoint {
 	private double gpsLongitude;
 	private double gpsLatitude;
 	
-	public Checkpoint(String instructions, String checkpointCode, double longitude, double latitude)
+	public Checkpoint(String instructions, String checkpointCode, double latitude, double longitude)
 	
 	{
 		this.instructions = instructions;

@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -55,7 +57,28 @@ public class MakeGameActivity extends Activity {
 			
 		});
 		
+		listCheckpoints.setOnItemClickListener(new OnItemClickListener () {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				
+				Checkpoint check = (Checkpoint) listCheckpoints.getAdapter().getItem(position);
+				
+				Intent checkInfo = new Intent(MakeGameActivity.this, CheckpointInfoActivity.class);
+				
+				checkInfo.putExtra("instructions",  check.getInstructions());
+				checkInfo.putExtra("checkpointCode", check.getCheckpointCode());
+				checkInfo.putExtra("latitude",  check.getGpsLatitude());
+				checkInfo.putExtra("longitude",  check.getGpsLongitude());
+				startActivity(checkInfo);
+				
+				
+			}
+			
+		});
 	}
+	
 	
 	
 	// ======== on return from CheckPointActivity, returns checkpoint info =============
@@ -76,6 +99,8 @@ public class MakeGameActivity extends Activity {
 	      }
 	}
 	
+	
+	// ================= auto code =========================
 	/**
 	 * Set up the {@link android.app.ActionBar}.
 	 */

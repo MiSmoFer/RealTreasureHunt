@@ -63,7 +63,7 @@ public class CheckPointActivity extends Activity {
 				
 				// ========= return checkpoint data to MakeGameActivity
 				Intent resultData = new Intent();
-				resultData.putExtra("instructions", txtInstructions.toString());
+				resultData.putExtra("instructions", txtInstructions.getText().toString());
 				resultData.putExtra("checkpointCode", checkpointCode);
 				resultData.putExtra("latitude",  latitude);
 				resultData.putExtra("longitude",  longitude);
